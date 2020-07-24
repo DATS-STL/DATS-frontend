@@ -8,7 +8,7 @@ class ToolSearch extends React.Component {
             <div className="ui segment">
                 <form className ="ui form">
                     <div>
-                        <label>Enter the tools you'd like to find here, shithead:</label>
+                        <label>Enter the tools you'd like to find here, shithead, motherfucker, bitch ass punk:</label>
                     </div>
                 </form>
             </div>
