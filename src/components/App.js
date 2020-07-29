@@ -1,25 +1,39 @@
 import React from 'react';
 import './App.css';
-import { render } from '@testing-library/react';
-import tools_api from '../api/tools_api';
+//import { render } from '@testing-library/react';
+import ToolsApiClient from '../api/tools_api';
 import ToolSearch from './ToolSearch';
 
 class App extends React.Component {
 
-  state = { alltools: [] };
+//state = { alltools: [] };
+state = {
+      fe_welcome_msg: 'Welcome Everyone'
+};
 
   onSearchSubmit = async (term) => {
-    const  response = await tools_api.get("tt" , {
+    // const  response = await tools_api.get("" , {
 
-    })
+    // })
     console.log (this);
-    this.setState ({alltools: response.data.results});
+    // this.setState ({alltools: response.data.results});
   }
 
+  async componentDidMount(){
+    this.apiClient = new ToolsApiClient();
+    this.apiClient.getWelcomeDan().then((welcome_msg) =>
+      this.setState ({...this.state, welcome_msg: welcome_msg})
+    )
+  }
+
+
   render() {
+    console.log (this.state.welcome_msg)
     return (
-      <div className="App1">
-            Learn React - Fuckface2
+      <div className="HomePage">
+            <h1>Family Tool Search Application</h1>
+            <h2>Welcome Message (from back end): {this.state.welcome_msg}</h2> 
+            <h2>Welcome Message (from front end): {this.state.fe_welcome_msg}</h2> 
             <ToolSearch onSumbit={this.onSearchSubmit} />
       </div>
     );
