@@ -8,7 +8,7 @@ class App extends React.Component {
 
 //state = { alltools: [] };
 state = {
-      fe_welcome_msg: 'Welcome Everyone'
+      fe_welcome_msg: 'Welcome Every1'
 };
 
   onSearchSubmit = async (term) => {
@@ -28,7 +28,7 @@ state = {
 
 
   render() {
-    console.log (this.state.welcome_msg)
+    console.log ('Console log ' + this.state.welcome_msg)
     return (
       <div className="HomePage">
             <h1>Family Tool Search Application</h1>
